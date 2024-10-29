@@ -28,11 +28,11 @@
 .open-btn {
   cursor: pointer;
 }
-.side-menu{
+.side-menu {
   height: 100vh;
   width: 250px;
   box-shadow: 2px 2px 1px 1px rgb(209, 204, 204) !important;
-  position: absolute;
+  position: fixed;
   left: 0;
   transition: all 0.3s ease;
   z-index: 100;
@@ -48,7 +48,7 @@ nav {
   margin-top: 10px;
   background-color: #a38f61;
 }
-.search-form .search-field{
+.search-form .search-field {
   width: 750px;
   outline: none;
   padding: 8px 14px;
@@ -64,43 +64,44 @@ nav {
 .close-icon {
   display: none;
 }
+
 .para-content {
   position: relative;
   width: 99.5%;
-  height: 90vh;
   margin: auto;
   margin-left: 67px;
   padding-right: 0px !important;
   margin-right: 0px !important;
-  background-color:#cacaca54 !important;
-
+  background-color: #cacaca54 !important;
 }
-.para-content h2{
+.para-content h2 {
   text-align: center;
   color: rgb(59, 59, 59);
   font-family: "Noto Sans", sans-serif;
   font-weight: 600;
 }
-.package-title{
+.package-title {
   font-weight: 600;
   margin-top: 10px;
   font-size: 18px;
   color: rgb(59, 59, 59);
 }
-.package-label{
+.package-label {
   /* font-size: 17px; */
   font-weight: 600;
 }
-.package-form input{
-border-radius: none !important;
-font-size: 14px;
-border: 1px solid rgb(134, 134, 134) !important;
-}
-.text-area{
+.package-form input {
+  border-radius: none !important;
+  font-size: 14px;
   border: 1px solid rgb(134, 134, 134) !important;
-
 }
-.radio-btns span{
+.text-area {
+  border: 1px solid rgb(134, 134, 134) !important;
+}
+#featureFields input {
+  padding: 10px;
+}
+.radio-btns span {
   font-size: 14px;
 }
 /* When sidebar is open, shrink the content area */
@@ -108,10 +109,15 @@ border: 1px solid rgb(134, 134, 134) !important;
   margin-left: 260px;
   transition: margin-left 0.3s ease;
 }
-.package-card{
-  width: 95% !important;
+.tick {
+  margin-left: -25px;
 }
-.status-field{
+.package-card {
+  width: 95% !important;
+  /* height: 100%;
+  position: absolute; */
+}
+.status-field {
   margin-left: -75px;
 }
 /* When sidebar is closed, expand the content area */
@@ -119,7 +125,9 @@ border: 1px solid rgb(134, 134, 134) !important;
   width: 100vw;
   height: 100vh;
   margin-right: 0px !important;
-  margin-left: 175px !important;
+  /* margin-left: 170px !important; */
+  margin-left: 158px !important;
+
   transition: all 0.3s ease;
 }
 .message,
@@ -134,6 +142,25 @@ border: 1px solid rgb(134, 134, 134) !important;
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
+}
+.add-del-btns button {
+  background-color: #887a5b;
+  color: white;
+  padding: 2px 10px;
+  font-size: 400 !important;
+  border: 2px solid #a09578;
+}
+.submit-btn {
+  background-color: #887a5b;
+  border: 2px solid #887a5b;
+  color: white;
+  transition: all .5s ease;
+}
+.submit-btn:hover {
+  background-color: white;
+  color: #615231;
+  border: 2px solid #50462f;
+  transform: scale(1.1);
 }
 @media screen and (max-width: 900px) {
   .side-menu {
@@ -150,11 +177,11 @@ border: 1px solid rgb(134, 134, 134) !important;
   .close-icon {
     display: block;
   }
- .search-form {
+  .search-form {
     background-color: #a38f61 !important;
     height: 30px !important;
   }
-  .search-form .search-field{
+  .search-form .search-field {
     width: auto;
     outline: none;
     padding: 6px 6px !important;
@@ -169,23 +196,24 @@ border: 1px solid rgb(134, 134, 134) !important;
     width: 42%;
   }
   .profile .notifications {
-    margin:0px;
+    margin: 0px;
   }
   .message,
-.notifications,
-.profile-img,
-.open-btn{
-  width: 30px !important;
-  height: 30px !important;
-  margin: auto 3px;
-}
+  .notifications,
+  .profile-img,
+  .open-btn {
+    width: 30px !important;
+    height: 30px !important;
+    margin: auto 3px;
+  }
   .para-content {
-    /* position: relative; */
     width: 100%;
     padding: 0px 0px;
     margin-top: 50px;
     margin-left: 0px;
-
+  }
+  .features {
+    margin-bottom: -20px;
   }
   .side-menu {
     position: fixed;
@@ -222,15 +250,15 @@ border: 1px solid rgb(134, 134, 134) !important;
     margin-left: 0 !important;
     padding: 0px !important;
   }
-  .package-title{
+  .package-title {
     font-size: 16px;
   }
-.package-label{
-  margin-top: 10px;
-}
-.status-field{
-  margin-left: 0px;
-}
+  .package-label {
+    margin-top: 10px;
+  }
+  .status-field {
+    margin-left: 0px;
+  }
   .sidebar-open {
     margin-left: 0 !important;
   }
