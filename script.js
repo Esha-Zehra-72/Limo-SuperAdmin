@@ -4,51 +4,45 @@ const closeBtn = document.querySelector(".close-icon");
 const sideMenu = document.querySelector(".side-menu");
 const openBtn = document.querySelector(".open-btn");
 const contentArea = document.querySelector(".container"); // Reference to the main content area
+
 // Cancel and Deleta  Buttons
 const addFeatrures = document.querySelector("#addFeatures");
 const cancelFeatures = document.querySelector("#cancelFeatures")
 const featureFields = document.querySelector("#featureFields");
 const featuresStatus = document.querySelector(".features-status")
-
-
-// Side Bar
-window.onload = function () {
-  sideMenu.style.transform = 'translateX(0)';
-  contentArea.classList.add('sidebar-open'); // Add class to shrink the content when the sidebar is open
-}
-
-function toggleSideMenu() {
-  if (sideMenu.style.transform === 'translateX(-100%)') {
+// Side bar
+function setSidebarState() {
+  if (window.innerWidth > 768) {
+    // Large screen: keep the sidebar open
     sideMenu.style.transform = 'translateX(0)';
-    contentArea.classList.add('sidebar-open'); // Shrink the content area
+    contentArea.classList.add('sidebar-open');
   } else {
+    // Small screen: hide the sidebar initially
     sideMenu.style.transform = 'translateX(-100%)';
-    contentArea.classList.remove('sidebar-open'); // Expand the content area
+    contentArea.classList.remove('sidebar-open');
   }
 }
 
-openBtn.addEventListener('click', toggleSideMenu);
-closeBtn.addEventListener('click', toggleSideMenu);
-
-
-
-window.onload = function () {
-  sideMenu.style.transform = 'translateX(0)';
-  contentArea.classList.add('sidebar-open'); // Add class to shrink the content when the sidebar is open
-}
-
 function toggleSideMenu() {
-  if (sideMenu.style.transform === 'translateX(-100%)') {
-    sideMenu.style.transform = 'translateX(0)';
-    // contentArea.classList.add('sidebar-open'); // Shrink the content area
-  } else {
-    sideMenu.style.transform = 'translateX(-100%)';
-    // contentArea.classList.remove('sidebar-open'); // Expand the content area
+  if (window.innerWidth <= 768) { // Only toggle on small screens
+    if (sideMenu.style.transform === 'translateX(-100%)') {
+      sideMenu.style.transform = 'translateX(0)';
+      contentArea.classList.add('sidebar-open'); // Shrink the content area
+    } else {
+      sideMenu.style.transform = 'translateX(-100%)';
+      contentArea.classList.remove('sidebar-open'); // Expand the content area
+    }
   }
 }
 
+// Set initial sidebar state based on screen size
+window.onload = setSidebarState;
+window.onresize = setSidebarState; // Adjust sidebar on window resize
+
+// Event listeners for toggling sidebar on small screens
 openBtn.addEventListener('click', toggleSideMenu);
 closeBtn.addEventListener('click', toggleSideMenu);
+
 
 // Cancel Add Buttons
 function addFeatureGroup() {
