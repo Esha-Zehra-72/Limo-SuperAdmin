@@ -15,7 +15,7 @@
   left: 0;
   transition: all 0.3s ease;
   z-index: 10001;
-  background-color: #f5f5f5 !important;
+  background-color: #e4e4e4 !important;
 }
 .nav-class {
   width: 100%;
@@ -45,7 +45,7 @@
   font-size: 10px;
 }
 .create-btn:hover {
-  background-color:#007bff;
+  background-color: #007bff;
   border: 1px solid #007bff;
 }
 .dataTables_length {
@@ -65,7 +65,7 @@ div.dataTables_wrapper div.dataTables_info {
 div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   margin: 2px 10px;
 }
-.menu-list{
+.menu-list {
   display: none;
   list-style: none;
   border: 1ps solid rgb(156, 37, 37);
@@ -76,21 +76,21 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   padding: 5px 5px !important;
   border-radius: 5px;
 }
-.menu-list li{
+.menu-list li {
   padding: 3px !important;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
-.menu-list li:hover{
+.menu-list li:hover {
   background-color: #616161;
   border-radius: 5px;
 }
-.menu-list li a{
-  transition: all .5s ease;
+.menu-list li a {
+  transition: all 0.5s ease;
 }
-.menu-list li:hover a{
+.menu-list li:hover a {
   color: white !important;
 }
-.action-btn{
+.action-btn {
   padding: 5px 5px !important;
   font-size: 12px;
   margin-left: 18px !important;
@@ -100,4 +100,66 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 }
 .menu-list.d-block {
   display: block;
+}
+.dropdown-list {
+  /* margin-left: -20px; */
+  display: none;
+}
+.dropdown-list a {
+  font-size: 15px;
+  color: rgb(73, 73, 73) !important;
+  margin-left: -25px;
+  padding: 5px 10px;
+}
+.dropdown-list:hover {
+  background-color: #a38f61ea;
+  border-radius: 5px;
+}
+.dropdown-list:hover a {
+  color: white !important;
+}
+.fa-circle {
+  font-size: 6px;
+}
+.dash-board-menu.active {
+  background-color: #a38f61 !important;
+}
+.dash-board-menu.active a {
+  color: white !important;
+}
+.dropdown-menu:hover {
+  background-color: #a38f61;
+}
+.selectInput {
+  border: 1px solid rgb(218, 218, 218) !important;
+  border-radius: 5px;
+  color: rgb(109, 109, 109);
+}
+.options {
+  color: rgb(109, 109, 109);
+}
+.update-btn {
+  border: 1px solid rgb(131, 86, 173);
+  border-radius: 5px;
+  color: rgb(131, 86, 173);
+  background-color: transparent;
+  padding: 5px 10px;
+  transition: all .5s ease;
+}
+.update-btn:hover{
+  background-color:rgb(131, 86, 173);
+  color: white;
+}
+
+.ok-btn{
+  border: 1px solid green;
+  border-radius: 5px;
+  color:white;
+  background-color:green;
+  padding: 5px 10px;
+  transition: all .5s ease;
+}
+.ok-btn:hover{
+  background-color: transparent;
+  color: green;
 }

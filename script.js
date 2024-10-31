@@ -10,6 +10,10 @@ const addFeatrures = document.querySelector("#addFeatures");
 const cancelFeatures = document.querySelector("#cancelFeatures")
 const featureFields = document.querySelector("#featureFields");
 const featuresStatus = document.querySelector(".features-status")
+
+// Setting DropDown Buttons
+const setting = document.querySelector("#setting");
+const dropDownList = document.querySelector(".dropdown-list")
 // Side bar
 function setSidebarState() {
   if (window.innerWidth > 768) {
@@ -95,3 +99,14 @@ function removeFeatureGroup(button) {
   }
 }
 
+// Setting DropDown Buttons
+const showDropDown =()=>{
+if(dropDownList.style.display === 'block'){
+  dropDownList.style.display = 'none'
+  setting.classList.remove('active'); 
+}else{
+  dropDownList.style.display = 'block'
+  setting.classList.add('active'); 
+}
+}
+setting.addEventListener('click', showDropDown)
